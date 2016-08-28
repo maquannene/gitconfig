@@ -1,0 +1,38 @@
+[user]
+	name = maquannene
+	email = maquannene@gmail.com
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[core]
+	excludesfile = /Users/quanma/.gitignore_global
+	editor = /usr/local/bin/vim
+	pager = less -F -X
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = true
+        status = auto
+        branch = auto
+        diff = auto
+        ui = true
+        pager = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+        path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[commit]
+	template = /Users/quanma/.gitmessage
+[help]
+	autocorrect = 1
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
